@@ -11,6 +11,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
+    FontAwesomeModule,
     
     AngularFireModule.initializeApp(environment.firebase),
 
