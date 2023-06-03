@@ -8,6 +8,8 @@ import { map } from "rxjs/operators";
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { User } from "libs/model/src/lib/user/user.interface";
+
 /**
  * Wrapper around Firebase User Services. RxJS subscriptions.
  */
