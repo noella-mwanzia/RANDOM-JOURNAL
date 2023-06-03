@@ -9,5 +9,7 @@ export interface User extends IObject
 
   displayName?: string;
 
-  profile: UserProfile;
+  profile?: UserProfile;
+
+  emailVerified: boolean;
 }
