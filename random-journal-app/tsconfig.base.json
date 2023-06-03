@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@random-journal-app/features": ["libs/features/src/index.ts"],
+      "@random-journal-app/model": ["libs/model/src/index.ts"],
       "@random-journal-app/state": ["libs/state/src/index.ts"]
     }
   },
