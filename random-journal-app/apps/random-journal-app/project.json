@@ -24,7 +24,7 @@
           "apps/random-journal-app/src/assets"
         ],
         "styles": [
-          "@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/random-journal-app/src/styles.scss"
         ],
         "scripts": []
