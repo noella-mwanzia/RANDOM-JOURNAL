@@ -1,0 +1,9 @@
+<div class="editor">
+    <angular-editor *ngIf="mode ==='edit'"
+				[formControl]="editor" [config]="editorConfig"
+				fxLayout="row" fxLayoutAlign="space-around center" class="mat-elevation-z2">
+		</angular-editor>
+
+		<button type="submit" class="submit-btn">Submit</button>
+</div>
+
