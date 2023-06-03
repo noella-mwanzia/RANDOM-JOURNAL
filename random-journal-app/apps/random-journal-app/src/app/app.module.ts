@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -22,6 +23,7 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
 
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
