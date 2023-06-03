@@ -32,10 +32,12 @@ export abstract class Store<T> implements Stateful<T>, OnDestroy
     this._sbS.sink = this.state$.subscribe(s => { this.state = s; });
   }
 
+  //Method that gets state
   get(): Observable<T> {
     return this.bs.asObservable();
   }
 
+  //Method that sets state
   protected set(newValue: Partial<T>, event: StoreEventTypes = "Not Specified")
   {
     this.previous.unshift(this.state);
