@@ -1,12 +1,26 @@
 .loginPic {
-    height: 100vh;
+    height: 70vh;
     width: 80vh;
 }
 
 .custom-toolbar {
     background-color: #FFFFFF;
-  }
+}
 
 .btn-primary {
-    background-color: #4044EE;
+    background-color: #00BFA6;
+}
+
+.mat-toolbar{
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;;
+}
+
+.title{
+  color: #00BFA6;
+	font-size: 30px
+}
+.auth-page{
+	margin-top: 5px;
 }
