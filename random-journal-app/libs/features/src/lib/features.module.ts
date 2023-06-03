@@ -19,6 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegistrationComponent } from './auth/components/registration/registration.component';
 import { LogInComponent } from './auth/components/login/login.component';
 import { JournalEditorComponent } from './journals/components/editor/editor.component';
+import { TimelineComponent } from './journals/components/timeline/timeline.component';
+import { JournalPreviewComponent } from './journals/components/preview/preview.component';
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { JournalEditorComponent } from './journals/components/editor/editor.comp
 
     RouterModule.forChild(featuresRoutes), RouterModule],
 
-    declarations: [RegistrationComponent, LogInComponent, JournalEditorComponent]
+    declarations: [RegistrationComponent, LogInComponent, JournalEditorComponent, TimelineComponent,
+                   JournalPreviewComponent]
 })
 export class FeaturesModule {}
