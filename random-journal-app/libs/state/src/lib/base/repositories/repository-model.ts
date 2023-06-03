@@ -1,6 +1,11 @@
 import { Observable, from } from 'rxjs';
 import { map, catchError, take, mergeMap } from 'rxjs/operators';
-import { AngularFirestore, AngularFirestoreCollection, DocumentData } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+import { IObject } from 'libs/model/src/lib/base/i-object.interface';
+import { User } from 'libs/model/src/lib/user/user.interface';
+
+import { UserService } from '../services/user.service';
 
 /** This class is the central point of access to the database.
  * It contains all CRUD methods required for a db operation.

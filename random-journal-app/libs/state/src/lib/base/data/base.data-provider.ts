@@ -1,5 +1,12 @@
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
+import { User } from 'libs/model/src/lib/user/user.interface';
+import { IObject } from 'libs/model/src/lib/base/i-object.interface';
+
+import { UserService } from '../services/user.service';
+import { Repository } from '../repositories/repository-model';
+
+
 
 /**
  * Base Repository Factory for repositories.
