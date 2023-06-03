@@ -5,10 +5,12 @@ import { featuresRoutes } from './lib.routes';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { RegistrationComponent } from './auth/components/registration/registration.component';
 
@@ -16,12 +18,14 @@ import { RegistrationComponent } from './auth/components/registration/registrati
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatToolbarModule,
+    FlexLayoutModule,
+
     RouterModule.forChild(featuresRoutes), RouterModule],
 
     declarations: [RegistrationComponent]
