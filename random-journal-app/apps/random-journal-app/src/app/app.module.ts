@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
 
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-
+     BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
