@@ -1,0 +1,66 @@
+<div class="auth-page" fxLayout="row" fxLayoutAlign="space-evenly center" fxlayoutGap="20px">
+    <div fxFlexLayout="row" class="auth-card" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxLayoutAlign="end center" fxLayoutGap="30px" fxFlex="50">
+            <img class="loginPic" src="assets\diary.svg" />
+        </div>
+
+        <div fxFlex="50" fxFlex.md="100" fxLayout="column" fxLayoutAlign="space-between stretch" class="actual-form">
+            <div class="form" fxLayout="column" fxLayoutGap="2">
+                <div style="width: 100%; padding-top: 100px" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start center">
+                    <h2 style="font-size: 50px;">Log in</h2>
+                    <span>Welcome back! Please enter your details</span>
+                    <mat-card   class="mat-elevation-z1">
+                        <mat-card-content>
+                            <div fxLayout="column" fxLayoutGap="5px">
+                            </div>
+
+                            <div class="tr-list-card padded" fxLayout="column">
+
+                            <form [formGroup]="signInForm" fxLayout="column" class="form-body" fxLayoutGap="15px">
+                                <div fxLayout="row" fxLayoutGap="10px">
+                                    <div fxLayout="column" fxFlex='100' fxLayoutGap="10px">
+                                      <label class="form-label" for="email"> Email</label>
+                                      <input type="text"  #email  #username formControlName="email" class="form-control" />
+                                    </div>
+                                  </div>
+
+                                  <div fxLayout="row" fxLayoutGap="20px">
+                                     <div fxLayout="column" fxFlex='100' fxLayoutGap="10px">
+                                      <label class="form-label" for="password">Password</label>
+                                      <input type="password" #password  #userPassword  formControlName="password" class="form-control"/>
+                                    </div> 
+                                  </div> 
+                            </form>
+
+                            <div fxLayout="row" style=" padding-top: 20px" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                                <div fxLayoutGap="20px">
+                                  <mat-checkbox class="small-txt"> Remember me </mat-checkbox>
+                                </div>
+                  
+                                <div fxLayoutGap="20px">
+                                  <a type="reset" id="forgot-btn" class="small-txt" mat-flat-button color="primary" >
+                                    Forgot Password?
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="login-btns" fxLayout="column" fxLayoutGap="20px">
+                                <div   class="d-grid gap-2"  fxLayout="row" fxLayoutGap="20px">
+                                    <button (click)="authservice.SignIn(email.value, userPassword.value)"
+                                    class="btn btn-primary" type="button">Login</button>
+                                     <button (click)="navigateToSignUp() " class="btn btn-secondary" type="button">
+                                      Sign Up  
+                                      </button>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
