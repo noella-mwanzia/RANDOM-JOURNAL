@@ -10,9 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 import { RegistrationComponent } from './auth/components/registration/registration.component';
+import { LogInComponent } from './auth/components/login/login.component';
 
 
 @NgModule({
@@ -25,9 +27,10 @@ import { RegistrationComponent } from './auth/components/registration/registrati
     MatButtonModule,
     MatToolbarModule,
     FlexLayoutModule,
+    MatCheckboxModule,
 
     RouterModule.forChild(featuresRoutes), RouterModule],
 
-    declarations: [RegistrationComponent]
+    declarations: [RegistrationComponent, LogInComponent]
 })
 export class FeaturesModule {}
