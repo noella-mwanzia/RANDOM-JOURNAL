@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@random-journal-app/features": ["libs/features/src/index.ts"]
+      "@random-journal-app/features": ["libs/features/src/index.ts"],
+      "@random-journal-app/state": ["libs/state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
