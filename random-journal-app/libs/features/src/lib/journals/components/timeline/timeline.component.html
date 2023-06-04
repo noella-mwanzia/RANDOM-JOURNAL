@@ -1,6 +1,6 @@
 <div class="timeline-page">
     <div class="header" fxLayout="row" fxLayoutAlign="center center" >
-        <h2>My entries</h2>
+        <h2>My journal entries</h2>
     </div>
     <div class="journals" *ngIf="journals$ | async as journals; else noEntries;">
         <app-journal-preview></app-journal-preview>
@@ -9,7 +9,10 @@
     </div>
 
     <ng-template #noEntries>
-        <h2 fxLayout="row" fxLayoutAlign="center center">No Entries Yet.</h2>
+        <div class="no-entries" fxLayout="column" fxLayoutAlign="center center">
+            <img class="empty-img" src="assets/empty.svg" alt="">
+            <h3 >No Entries Yet.</h3>
+        </div>
     </ng-template>
     <div>
 		<button type="button" class="new-btn" (click)="createNewJournal()">
