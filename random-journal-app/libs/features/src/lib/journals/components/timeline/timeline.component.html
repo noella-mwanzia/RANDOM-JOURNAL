@@ -2,11 +2,15 @@
     <div class="header" fxLayout="row" fxLayoutAlign="center center" >
         <h2>My entries</h2>
     </div>
-    <div class="journals">
+    <div class="journals" *ngIf="journals$ | async as journals; else noEntries;">
         <app-journal-preview></app-journal-preview>
         <app-journal-preview></app-journal-preview>
         <app-journal-preview></app-journal-preview>
     </div>
+
+    <ng-template #noEntries>
+        <h2 fxLayout="row" fxLayoutAlign="center center">No Entries Yet.</h2>
+    </ng-template>
     <div>
 		<button type="button" class="new-btn" (click)="createNewJournal()">
             <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; New
