@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+
+import { JournalEntriesService } from 'libs/state/src/lib/base/services/journal.service';
+import { Journal } from 'libs/model/src/lib/journal.interface';
 
 import { EDITOR_CONFIG } from '../../config/editor-config';
 
@@ -9,7 +12,6 @@ import { EDITOR_CONFIG } from '../../config/editor-config';
   styleUrls: ['./editor.component.scss']
 })
 
-
 export class JournalEditorComponent implements OnInit 
 {
   
@@ -17,13 +19,24 @@ export class JournalEditorComponent implements OnInit
 
   editorConfig = EDITOR_CONFIG;
 
-  editor = new FormControl('');
+  editor = new FormControl('', Validators.required);
 
-  constructor() { }
+  constructor(private journalService: JournalEntriesService<Journal>) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {}
+
+	formIsInvalid()
+  {
+    return this.editor.invalid;
   }
 
+	submitJournal()
+	{
+		const html = this.editor.value as string;
+
+		const entry = { html } as Journal
+
+		this.journalService.createJournalEntry(entry).subscribe()
+	}
 
 }
