@@ -25,14 +25,14 @@ export class JournalEntriesService<T extends Journal>
   {
     const activeUser$ = this._userService.getUser();
 
-    return activeUser$.pipe(switchMap(user => this._dataProvider.getRepo(`journals/${user.id}/entries`).getDocuments()));
+    return activeUser$.pipe(switchMap(user => this._dataProvider.getRepo<Journal>(`journals/${user.id}/entries`).getDocuments()));
   }
 
   createJournalEntry(entry: Journal)
   {
     const activeUser$ = this._userService.getUser();
 
-    return activeUser$.pipe(switchMap(user => this._dataProvider.getRepo(`journals/${user.id}/entries`).create(entry)));
+    return activeUser$.pipe(switchMap(user => this._dataProvider.getRepo<Journal>(`journals/${user.id}/entries`).create(entry)));
   }
 
 }
