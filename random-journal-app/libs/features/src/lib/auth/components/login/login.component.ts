@@ -16,7 +16,7 @@ import { AuthService } from '../../services/auth.service';
 
 export class LogInComponent implements OnInit {
   
-  signInForm!: FormGroup
+  signInForm!: FormGroup;
 
   Breakpoints = Breakpoints;
   currentBreakpoint:string = '';
@@ -34,7 +34,7 @@ export class LogInComponent implements OnInit {
   constructor(private _fb: FormBuilder,
               private router: Router,
               private breakpointObserver: BreakpointObserver,
-              public authservice: AuthService) { }
+              public authService: AuthService) { }
 
   ngOnInit(): void {
     this.breakpoint$.subscribe(() =>
@@ -63,9 +63,27 @@ export class LogInComponent implements OnInit {
       })
   }
 
+  signIn()
+  {
+    if(this.signInForm.valid)
+    {
+      const frm = this.signInForm.value;
+
+
+      this.authService.SignIn(frm.email,frm.password)
+                        .then(() => this.router.navigate(['timeline']))
+                        .catch(error => error);
+    }
+  }
+
+  formIsInvalid()
+  {
+    return this.signInForm.invalid;
+  }
+
   navigateToSignUp ()
   {
-    this.router.navigate(['/sign-up']);
+    this.router.navigate(['/register']);
   }
 
   ngOnDestroy = () => this.subs.unsubscribe();

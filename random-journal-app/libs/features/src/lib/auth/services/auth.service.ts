@@ -44,11 +44,10 @@ export class AuthService {
 	{
     return this.afAuth
       					.signInWithEmailAndPassword(email, password)
-								.then((result) => {
+								.then((res) => {
 									this.afAuth.authState.subscribe((user) => {
 										if (user) {
 											console.log(user);
-											this.router.navigate(['splash-screen']);
 										}
 									});
 								})

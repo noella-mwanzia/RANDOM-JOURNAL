@@ -47,8 +47,7 @@
 
                             <div class="login-btns" fxLayout="column" fxLayoutGap="20px">
                                 <div   class="d-grid gap-2"  fxLayout="row" fxLayoutGap="20px">
-                                    <button (click)="authservice.SignIn(email.value, userPassword.value)"
-                                    class="btn btn-primary" type="button">Login</button>
+                                    <button (click)="signIn()" [disabled]="formIsInvalid()" class="btn btn-primary" type="button">Login</button>
                                      <button (click)="navigateToSignUp() " class="btn btn-secondary" type="button">
                                       Sign Up  
                                       </button>
