@@ -11,5 +11,4 @@ export interface User extends IObject
 
   profile?: UserProfile;
 
-  emailVerified: boolean;
 }
