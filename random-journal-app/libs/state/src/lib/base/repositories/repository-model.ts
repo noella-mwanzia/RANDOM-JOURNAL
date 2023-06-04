@@ -75,7 +75,7 @@ export class Repository<T extends IObject> {
     if (!t.id)
       throw new Error("Trying to update POJO-object. Need active document with database id.");
 
-    t.updatedOn = new Date();
+    (t as any).updatedOn = new Date();
 
     return from(this._db.collection(this._collectionName)
                         .doc(t.id)
@@ -89,7 +89,7 @@ export class Repository<T extends IObject> {
    * @param t - obj
    * @param id - document Id
    */
-  public write(t: T, id: string): Observable<T>
+  public write(t: any, id: string): Observable<T>
   {
     t.id = id;
     if(!t.createdOn)
