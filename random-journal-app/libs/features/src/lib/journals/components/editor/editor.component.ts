@@ -5,6 +5,7 @@ import { JournalEntriesService } from 'libs/state/src/lib/base/services/journal.
 import { Journal } from 'libs/model/src/lib/journal.interface';
 
 import { EDITOR_CONFIG } from '../../config/editor-config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journal-editor',
@@ -21,7 +22,8 @@ export class JournalEditorComponent implements OnInit
 
   editor = new FormControl('', Validators.required);
 
-  constructor(private journalService: JournalEntriesService<Journal>) { }
+  constructor(private journalService: JournalEntriesService<Journal>,
+							private router: Router) { }
 
   ngOnInit(): void {}
 
@@ -36,7 +38,7 @@ export class JournalEditorComponent implements OnInit
 
 		const entry = { html } as Journal
 
-		this.journalService.createJournalEntry(entry).subscribe()
+		this.journalService.createJournalEntry(entry).subscribe((res) => this.router.navigate(['timeline']))
 	}
 
 }
