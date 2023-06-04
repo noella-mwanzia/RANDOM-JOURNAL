@@ -23,7 +23,7 @@ export class DataProvider extends BaseDataProvider
    /*
    * @param collectionName: The collection name.
    */
-  getRepo<T extends IObject>(collectionName) 
+  getRepo<T extends IObject>(collectionName: string) 
   {
     return this._createRepo<T>(collectionName);
   }
