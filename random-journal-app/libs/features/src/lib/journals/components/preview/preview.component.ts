@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Journal } from 'libs/model/src/lib/journal.interface';
+import { __DateFromStorage } from '../../../utilities/convert-date.function';
 
 @Component({
   selector: 'app-journal-preview',
@@ -8,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class JournalPreviewComponent implements OnInit {
   
+  @Input() journal!: Journal
   constructor() { }
 
   ngOnInit(): void {
-    
+  }
+
+  formatDate()
+  {
+   return __DateFromStorage(this.journal.createdOn!).format("dddd, MMMM Do YYYY, h:mm:ss a")
   }
 
 

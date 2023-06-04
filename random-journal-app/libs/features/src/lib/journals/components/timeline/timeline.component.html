@@ -3,9 +3,7 @@
         <h2>My journal entries</h2>
     </div>
     <div class="journals" *ngIf="journals$ | async as journals; else noEntries;">
-        <app-journal-preview></app-journal-preview>
-        <app-journal-preview></app-journal-preview>
-        <app-journal-preview></app-journal-preview>
+        <app-journal-preview *ngFor="let journal of journals" [journal]="journal"></app-journal-preview>
     </div>
 
     <ng-template #noEntries>
