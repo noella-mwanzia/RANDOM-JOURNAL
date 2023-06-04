@@ -9,7 +9,7 @@ export const featuresRoutes: Route[] = [
     {path: '', component: LogInComponent},
     {path:'register', component: RegistrationComponent},
     {path:'timeline', component: TimelineComponent},
-    // {path:'', component: JournalEditorComponent}
+    {path:'editor', component: JournalEditorComponent}
     // {path:'', component:JournalPreviewComponent}
 
 
