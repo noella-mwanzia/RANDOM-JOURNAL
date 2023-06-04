@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { TimelineComponent } from './journals/components/timeline/timeline.compo
 import { JournalPreviewComponent } from './journals/components/preview/preview.component';
 
 import { UserService } from 'libs/state/src/lib/base/services/user.service';
+import { JournalViewModal } from './journals/components/modals/journal-display-modal/journal-display-modal.component';
 
 
 @NgModule({
@@ -42,12 +44,13 @@ import { UserService } from 'libs/state/src/lib/base/services/user.service';
     HttpClientModule,
     FontAwesomeModule,
     StateModule,
+    MatDialogModule,
 
 
     RouterModule.forChild(featuresRoutes), RouterModule],
 
     declarations: [RegistrationComponent, LogInComponent, JournalEditorComponent, TimelineComponent,
-                   JournalPreviewComponent],
+                   JournalPreviewComponent, JournalViewModal],
     
 })
 export class FeaturesModule {}
