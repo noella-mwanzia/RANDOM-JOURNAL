@@ -15,7 +15,8 @@ import { User } from "libs/model/src/lib/user/user.interface";
  */
 
 @Injectable({ providedIn: 'root' })
-export abstract class UserService<T extends User>
+
+export class UserService<T extends User>
 {
   protected _user$: Observable<T | null>;
 
