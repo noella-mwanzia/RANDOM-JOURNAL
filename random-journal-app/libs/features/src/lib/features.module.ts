@@ -16,11 +16,15 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { StateModule } from 'libs/state/src/lib/state.module';  
+
 import { RegistrationComponent } from './auth/components/registration/registration.component';
 import { LogInComponent } from './auth/components/login/login.component';
 import { JournalEditorComponent } from './journals/components/editor/editor.component';
 import { TimelineComponent } from './journals/components/timeline/timeline.component';
 import { JournalPreviewComponent } from './journals/components/preview/preview.component';
+
+import { UserService } from 'libs/state/src/lib/base/services/user.service';
 
 
 @NgModule({
@@ -37,10 +41,13 @@ import { JournalPreviewComponent } from './journals/components/preview/preview.c
     AngularEditorModule,
     HttpClientModule,
     FontAwesomeModule,
+    StateModule,
+
 
     RouterModule.forChild(featuresRoutes), RouterModule],
 
     declarations: [RegistrationComponent, LogInComponent, JournalEditorComponent, TimelineComponent,
-                   JournalPreviewComponent]
+                   JournalPreviewComponent],
+    
 })
 export class FeaturesModule {}
