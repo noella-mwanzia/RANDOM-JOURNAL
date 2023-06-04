@@ -3,7 +3,10 @@
     margin: auto;
     border: 1px solid rgb(205, 194, 194);
     border-radius: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
+
+    padding: 10px;
+    border: 1px solid #00BFA6;
 }
 
 .content{
@@ -11,9 +14,8 @@
     margin: auto;
     margin-bottom: 5px;
     max-height: 100px;
-    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
-
-   padding: 20px;
+    -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent);
+    padding: 20px;
 }
 
 .body{
