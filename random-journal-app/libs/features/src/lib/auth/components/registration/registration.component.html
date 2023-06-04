@@ -27,7 +27,7 @@
                       
                                     <div fxLayout="column" fxFlex='50' fxLayoutGap="5px">
                                       <label class="form-label" for="password">Last Name</label>
-                                      <input type="text" #lastName  formControlName="firstName" class="form-control" />  
+                                      <input type="text" #lastName  formControlName="lastName" class="form-control" />  
                                     </div>
                                   </div>
 
@@ -53,8 +53,8 @@
 
                             <div  style="padding-top: 20px"class="login-btns" fxLayout="column">
                                 <div style="padding-top: 20px" class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="button" 
-                                    (click)="authService.SignUp(userEmail.value, password.value, firstName.value )">Sign Up</button>
+                                    <button class="btn btn-primary" [disabled]="formIsInvalid()"
+                                    (click)="signUp()">Sign Up</button>
                                 </div>
                                 <div style="padding-top: 20px" class="d-grid gap-2">
                                   <button class="btn btn-primary" type="button" 

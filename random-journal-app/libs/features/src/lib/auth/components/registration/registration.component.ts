@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -33,9 +32,27 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
+  signUp()
+  {
+    if(this.registerForm.valid)
+    {
+      const frm = this.registerForm.value;
+
+      const displayName = frm.firstName + frm.lastName;
+
+      this.authService.SignUp(frm.email,frm.password,displayName)
+                        .then(() => this.router.navigate(['timeline']))
+                        .catch(error => error);
+    }
+  }
+
+  formIsInvalid()
+  {
+    return this.registerForm.invalid;
+  }
+
   navigateToSignIn ()
   {
-    // this.afs.create(CHARACTERS);
     this.router.navigate(['/']);
   }
 
