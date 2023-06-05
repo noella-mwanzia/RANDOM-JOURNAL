@@ -74,5 +74,15 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.0.2"
+  },
+  "firebase-functions-dependencies": [
+    "firebase-functions",
+    "firebase-tools",
+    "firebase-admin"
+  ],
+  "main": "dist/apps/random-journal-functions/main.js",
+  "engines": {
+    "node": "10"
   }
+
 }
