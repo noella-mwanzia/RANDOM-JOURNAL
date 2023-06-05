@@ -15,7 +15,7 @@ import { JournalViewModal } from '../modals/journal-display-modal/journal-displa
 
 export class TimelineComponent implements OnInit {
 
-  journals$!: Observable<Journal[]>
+  journals$!: Observable<any[]>
   
   constructor( private _router: Router,
                private _journalEntriesService: JournalEntriesService<Journal>,
